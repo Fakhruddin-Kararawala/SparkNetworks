@@ -5,12 +5,23 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+
+@NamedQueries({
+    @NamedQuery(name=Matches.MISSING_PHOTO,query="select m from Matches m where photo is null"),
+    @NamedQuery(name=Matches.HAS_PHOTO,query="select m from Matches m where photo is not null")
+})
+
 
 @Entity
 @Table(name = "matches")
 public class Matches {
 
+	public static final String HAS_PHOTO = "hasPhoto";
+	public static final String MISSING_PHOTO = "missingPhoto";
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;

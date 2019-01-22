@@ -8,6 +8,7 @@ import java.util.regex.Pattern;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -63,5 +64,11 @@ public class MatchesController {
 
         Specification<Matches> spec = builder.build();
         return repo.findAll(spec);
+    }
+    
+    @RequestMapping(method = RequestMethod.GET, value = "/matches/hasPhoto/{hasPhoto}")
+    @ResponseBody
+    public List<Matches> findPhotos(@PathVariable(value = "hasPhoto") String hasPhoto) {
+    	return dao.testHasPhoto(hasPhoto);
     }
 }

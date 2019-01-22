@@ -41,4 +41,12 @@ public class MatchesDaoImpl implements IMatchesDao {
         entityManager.persist(entity);
     }
 
+    @Override
+    public List<Matches> testHasPhoto(String hasPhoto) {
+    	if(hasPhoto.equalsIgnoreCase("false"))
+    		return entityManager.createNamedQuery(Matches.MISSING_PHOTO).getResultList();
+    	else
+    		return entityManager.createNamedQuery(Matches.HAS_PHOTO).getResultList();
+    }
+    
 }

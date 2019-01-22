@@ -9,4 +9,6 @@ public interface IMatchesDao {
     List<Matches> searchMatches(List<SearchCriteria> params);
 
     void save(Matches entity);
+
+	List<Matches> testHasPhoto(String hasPhoto);
 }
