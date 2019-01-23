@@ -62,7 +62,7 @@ public class MatchesControllerIntegrationTest {
     
     @Test
     public void testHeight() throws Exception {
-    	mockMvc.perform(MockMvcRequestBuilders.get("/api/matches/spec?search=height<=135;height<=210").contentType(MediaType.APPLICATION_JSON))
+    	mockMvc.perform(MockMvcRequestBuilders.get("/api/matches/spec?search=height>=135;height<=210").contentType(MediaType.APPLICATION_JSON))
         .andExpect(status().isOk())
         .andExpect(MockMvcResultMatchers.jsonPath("$", hasSize(25)));
     }

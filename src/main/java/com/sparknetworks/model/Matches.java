@@ -270,8 +270,15 @@ public class Matches {
 			return false;
 		return true;
 	}
-	
-	
-	
-	
+
+	@Override
+	public String toString() {
+		return "Matches [id=" + id + ", name=" + name + ", age=" + age
+				+ ", job=" + job + ", height=" + height + ", city=" + city
+				+ ", latitude=" + latitude + ", longitude=" + longitude
+				+ ", photo=" + photo + ", score=" + score + ", contact="
+				+ contact + ", favourite=" + favourite + ", religion="
+				+ religion + "]";
+	}
+
 }
