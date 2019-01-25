@@ -1,0 +1,35 @@
+
+
+<div style="text-align:center">
+
+  <div style="text-align:justify">
+
+
+    <ag-grid-angular style="text-align:left; width: 100%; height: 800px ;" class="ag-theme-balham" [enableSorting]="true"
+      [enableFilter]="true" [rowData]="rowData" [columnDefs]="columnDefs" rowSelection="multiple" (rowClicked)="onRowClicked($event)"
+      [pagination]="true" [paginationAutoPageSize]="true" [animateRows]="true">
+    </ag-grid-angular>
+  </div>
+</div>
+
+<div>
+    <button button type="submit" (click)="hasphoto('true')">HasPhoto</button> 
+    <button button type="submit" (click)="hasphoto('false')">MissPhoto</button><br>
+    
+    <button button type="submit" (click)="getAgeRange('age>30')">Age greater than 30</button> 
+    <button button type="submit" (click)="getAgeRange('age<30')">Age less than 30</button><br>
+    
+    <button button type="submit" (click)="isIncontact('contact>0')">HasContact</button> 
+    <button button type="submit" (click)="isIncontact('contact:0')">MissContact</button><br>
+    
+    <button button type="submit" (click)="getHeightRange('height>135')">Height > 135</button> 
+    <button button type="submit" (click)="getHeightRange('height>210')">Height > 210</button><br>
+
+    <button button type="submit" (click)="isFavourite('favourite:true')">Hasfavourite</button> 
+    <button button type="submit" (click)="isFavourite('favourite:false')">Missfavourite</button><br>
+
+    <button button type="submit" (click)="getCompatibilityScoreRange('score<1')">score < 1</button> 
+    <button button type="submit" (click)="getCompatibilityScoreRange('score>100')">score > 100</button><br>
+
+  </div>
+  
